@@ -18,6 +18,12 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+  userPage(): void {
+    this.router.navigateByUrl('/users');
+  }
+  favoritesPage(): void {
+    this.router.navigateByUrl('/favorites');
+  }
  onLogout() {
    this.userServer.setCredentials(null, null, null);
    this.router.navigateByUrl('/login');

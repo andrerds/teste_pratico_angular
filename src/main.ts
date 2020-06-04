@@ -6,7 +6,8 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
-  if (window){
+  if (window) {
+    // tslint:disable-next-line: only-arrow-functions
     window.console.log = function() {};
   }
 }

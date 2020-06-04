@@ -10,10 +10,10 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-              <a href="/users" class="nav-link waves-light" mdbWavesEffect routerLinkActive="active">List users<span class="sr-only">(current)</span></a>
+              <a   class="nav-link waves-light" mdbWavesEffect routerLinkActive="active" (click)="userPage()">List users<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link waves-light" href="/favorites" routerLinkActive="active" mdbWavesEffect>Favoritos</a>
+              <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect (click)="favoritesPage()">Favoritos</a>
           </li>
           <li class="nav-item" *ngIf="islogado">
               <a class="nav-link waves-light"   routerLinkActive="active" mdbWavesEffect
