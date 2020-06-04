@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './users/list/list.component';
 import { ListdetailComponent } from './users/listdetail/listdetail.component';
 import { FavoritesComponent } from './users/favorites/favorites.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: ListComponent },
