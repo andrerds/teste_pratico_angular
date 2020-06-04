@@ -1,0 +1,36 @@
+<div class="row  m-2">
+  <div class="col-lg-4 col-md-6  m-2 p-1" *ngFor="let user of usersfav">
+    <!--Card-->
+    <mdb-card cascade="true" >
+
+      <!--Card image-->
+      <div class="view view-cascade gradient-card-header blue-gradient  p-2">
+        <h2 class="card-header-title">{{ user.name}}</h2>
+        <p>{{ user.email }}</p>
+      </div>
+      <!--/Card image-->
+<!--Button-->
+
+      <mdb-card-body cascade="true" class="text-center">
+        <!--Card content-->
+
+        <mdb-card-text >
+          <address>
+            <!-- {{user | json }} -->
+            Street: {{user.address.street }} / {{user.address.suite }}
+            <br>
+            City: {{user.address.city }}
+            Zipcode: {{user.address.zipcode }}
+
+          </address>
+        </mdb-card-text>
+      </mdb-card-body>
+      <!--/.Card content-->
+
+
+
+
+    </mdb-card>
+    <!--/.Card-->
+  </div>
+</div>

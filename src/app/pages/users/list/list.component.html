@@ -1,0 +1,46 @@
+<mdb-card  class="cardlist">
+  <div class="text-white text-center py-5 px-4 my-5">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Teste - Consumindo Api</strong></h2>
+      <p class="mx-5 mb-5"> Lista de Usuaros</p>
+      <!-- <a mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
+        <mdb-icon fas icon="clone" class="left"></mdb-icon>View project
+      </a> -->
+    </div>
+    <section class="section_list">
+      <div class="table-responsive">
+        <table id="tableSortExample" mdbTable class="z-depth-1" hover="true">
+          <thead class="black white-text">
+            <tr>
+              <th *ngFor="let head of headElements; let i = index"
+              aria-controls="tableSortExample" scope="col"
+              [mdbTableSort]="users$" [sortBy]="headElements[i]">{{head | titlecase}}
+                <mdb-icon fas icon="sort"></mdb-icon>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let user of users$ |async ; let i = index">
+              <th scope="row">{{user.id}}</th>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>
+                <a mdbBtn floating="true" size="sm" mdbWavesEffect class="pr-3" (click)="salve(user)" >
+
+                  <mdb-icon  [class]="colorFav"  fas icon="star"></mdb-icon>
+                </a>
+
+                <a mdbBtn floating="true" size="sm" mdbWavesEffect class="pr-3" (click)="getDetail(user?.id)" >
+                  <mdb-icon  fas icon="eye"></mdb-icon>
+                </a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+      </section>
+  </div>
+</mdb-card>

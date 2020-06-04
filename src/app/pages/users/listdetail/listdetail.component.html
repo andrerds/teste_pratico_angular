@@ -1,0 +1,65 @@
+
+     <div class="row" *ngIf="!loading">
+  <div class="cardListUser">
+      <div class="col-md-12">
+        <!--Card-->
+        <mdb-card cascade="true" wider="true">
+        <!--Card image-->
+          <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+            <mdb-card-img *ngIf="!loading" src="https://picsum.photos/780/520?random"></mdb-card-img>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--/Card image-->
+
+          <mdb-card-body cascade="true" class="text-center pb-0">
+            <!--Card content-->
+            <!--Title-->
+            <h4 class="card-title">
+              <strong>{{ user?.name}}</strong>
+            </h4>
+            <h5 class="indigo-text">
+              <strong>{{user?.email}}</strong>
+            </h5>
+
+            <mdb-card class="mt-4">
+              <mdb-card-header>User Name: {{ user?.username }}</mdb-card-header>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Phone: {{ user?.phone }}</li>
+                <li class="list-group-item">Website: {{ user?.website }}</li>
+                <li class="list-group-item">Conpany : {{ user?.company?.name }}</li>
+                <li class="list-group-item">{{ user?.company?.bs }}  | {{ user?.company?.catchPhrase }}</li>
+              </ul>
+            </mdb-card>
+              <mdb-card-text class="mt-4">
+                <h3>Address</h3>
+                <address>
+                  Street: {{ user?.address?.street }} | ( {{ user?.address?.suite }}) | City :{{user?.address?.city}} |
+                  ZipCode: {{ user?.address?.zipcode }}
+                </address>
+                <div class="mt-4">
+                  Lat: <strong> {{ user?.address?.geo?.lat }}</strong>
+                  Lng: <strong> {{ user?.address?.geo?.lng }} </strong>
+                </div>
+              </mdb-card-text>
+            <!-- Card footer -->
+            <div class="clearfix">
+              <div class="card-footer text-muted text-center mt-4">
+              </div>
+            </div>
+          </mdb-card-body>
+          <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="spinner" *ngIf="loading">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+

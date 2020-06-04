@@ -1,0 +1,32 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand  class="header"><a class="navbar-brand" href="#">
+
+  <img class="logo" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/angular-js-512.png" alt="logo">
+  </a></mdb-navbar-brand>
+  <!-- Collapsible content -->
+  <links>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a href="/users" class="nav-link waves-light" mdbWavesEffect routerLinkActive="active">List users<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" href="/favorites" routerLinkActive="active" mdbWavesEffect>Favoritos</a>
+          </li>
+          <li class="nav-item" *ngIf="islogado">
+              <a class="nav-link waves-light"   routerLinkActive="active" mdbWavesEffect
+               (click)="onLogout()">Logout</a>
+          </li>
+
+
+      </ul>
+      <!-- Links -->
+
+
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
