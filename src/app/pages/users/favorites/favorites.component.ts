@@ -14,14 +14,16 @@ export class FavoritesComponent implements OnInit {
   constructor(
     private favoriteService: FavoriteService,
     private userService: UserService,
-    private router: Router) { }
+    private router: Router) {
+      this.userService.getCredentials().then((data) => {
+        if (!data.token) {
+          this.router.navigateByUrl('/login');
+        }
+       });
+     }
 
   ngOnInit(): void {
      this.favoriteService.getAllFavorite().then(res => {this.usersfav = res; });
-     this.userService.getCredentials().then((data) => {
-      if (!data.token) {
-        this.router.navigateByUrl('/login');
-      }
-     });
+
   }
 }

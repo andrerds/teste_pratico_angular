@@ -20,13 +20,12 @@ export class LoginComponent implements OnInit {
   }
   private createForm(): void {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', [Validators.email]],
+      password: ['', [Validators.required]]
     });
   }
   async login(value: any) {
     if (this.loginForm.valid) {
-
       this.userService.getCredentials().then((data) => {
         console.log('Data', data.token);
         if (data.token == null) {
@@ -34,10 +33,8 @@ export class LoginComponent implements OnInit {
           const token = new Date().toISOString() + Math.floor((Math.random() * 1000) + 2);
           this.userService.setCredentials(iduser,  this.loginForm.value.email, token);
           setTimeout(() => {
-            this.router.navigateByUrl('/users');
+            this.router.navigate(['/users']);
         }, 100);
-        } else if ( !data.token ) {
-          this.router.navigateByUrl('/login');
         }
       });
     }

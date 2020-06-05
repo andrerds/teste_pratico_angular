@@ -14,7 +14,7 @@ import {
   TableModule} from 'angular-bootstrap-md';
 import { FooterComponent } from './../components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -31,7 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         InputsModule,
         CardsModule,
         TableModule,
-        FormsModule , ReactiveFormsModule
+        FormsModule , ReactiveFormsModule, AgmCoreModule
   ],
   exports: [
        IconsModule,
@@ -42,7 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         InputsModule,
         CardsModule,
         TableModule,
-        FormsModule , ReactiveFormsModule,
+        FormsModule , ReactiveFormsModule, AgmCoreModule,
     HeaderComponent,
     FooterComponent,
     MenuComponent,

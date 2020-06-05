@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   public islogado = false;
   constructor(private userServer: UserService, private router: Router) { }
 
-  ngOnInit(): void {
+ async ngOnInit(): Promise<void> {
     this.userServer.getCredentials().then((data) => {
       if (data.token) {
         this.islogado = true;
@@ -19,13 +19,21 @@ export class HeaderComponent implements OnInit {
     });
   }
   userPage(): void {
-    this.router.navigateByUrl('/users');
+    this.router.navigate(['/users']);
   }
   favoritesPage(): void {
-    this.router.navigateByUrl('/favorites');
+    this.router.navigate(['/favorites']);
   }
- onLogout() {
-   this.userServer.setCredentials(null, null, null);
-   this.router.navigateByUrl('/login');
+ async onLogout(): Promise<any> {
+  const remove = {
+    iduser: localStorage.removeItem('iduser'),
+    name: localStorage.removeItem('name'),
+    email: localStorage.removeItem('email'),
+    token: localStorage.removeItem('token'),
+    authorization: localStorage.removeItem('authorization')
+  };
+  this.router.navigate(['/login']);
+
+  return await remove;
  }
 }

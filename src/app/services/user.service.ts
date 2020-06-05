@@ -3,14 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { environment } from '../../environments/environment.prod';
-import { LoginModel } from '../models/login.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public header;
-
+  protected header;
   private users = environment.api;
   constructor(private http: HttpClient) { }
 

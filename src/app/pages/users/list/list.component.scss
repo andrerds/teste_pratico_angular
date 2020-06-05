@@ -1,8 +1,15 @@
+section{
+  background: aliceblue;
+  border-radius: 0px 0px 10px 10px;
+}
 .table{
   width: 100% !important;
 }
 .cardlist{
   background: url('../../../../assets/img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-x;
   margin: 0px !important;
   border-radius: none !important;
   padding: 0 !important;
